@@ -1,0 +1,6 @@
+ledger.jsonl
+*.log
+.env
+.env.*
+intents-guard
+/deps/
