@@ -33,6 +33,17 @@ BLOCKED — no deposit address was created, no funds can move.
 
 Both outputs above are real, unedited runs from 2026-11-05 against `https://1click.chaindefuser.com`.
 
+**Re-verified from a clean clone on 2026-11-11 UTC:** `go build ./...`, `go vet ./...` and `go test ./...` pass;
+a live quote `wNEAR → USDT` for 1 wNEAR returned **3.577655 USDT**, and `guard -usd 24.12` still returned
+`⛔ human approval required` → `BLOCKED` with exit code 1 and no deposit address created.
+
+## Demo video (54s, no audio)
+
+[`demo/intents-guard-demo.mp4`](demo/intents-guard-demo.mp4) — screen recording of the real thing, not a mockup:
+clean clone → `build` / `vet` / `test` → live 1Click `quote` (dry, deposit address `—`) → `guard -usd 24.12`
+→ `⛔ human approval required` → `BLOCKED`, exit 1. Every line of output on screen comes from an actual run
+against `https://1click.chaindefuser.com` (recorded 2026-11-10 09:02 UTC).
+
 ---
 
 ## Why this exists
